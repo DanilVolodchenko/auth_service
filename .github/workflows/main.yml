@@ -27,5 +27,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Create .env file
+        run: |
+          echo "SECRET_KEY=92588c4c-2949-4d38-835c-583e03e35641" > .env
+
       - name: Test with pytest
         run: python -m pytest -svv
